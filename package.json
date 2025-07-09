@@ -2,6 +2,7 @@
   "name": "is-useless",
   "version": "1.0.0",
   "description": "A CLI tool to determine if a file is sufficiently useless.",
+  "type": "module",
   "main": "dist/index.js",
   "bin": {
     "is-useless": "dist/index.js"
@@ -12,7 +13,7 @@
     "useless-sound.mp3"
   ],
   "scripts": {
-    "start": "ts-node src/index.ts",
+    "start": "node --loader ts-node/esm src/index.ts",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
