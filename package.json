@@ -8,7 +8,8 @@
   },
   "files": [
     "dist",
-    "useless.html"
+    "useless.html",
+    "useless-sound.mp3"
   ],
   "scripts": {
     "start": "ts-node src/index.ts",

@@ -14,9 +14,26 @@ npm install -g is-useless
 
 ## Usage
 
+### Analyzing a File
+
+To analyze a file and determine its Uselessness Score:
 ```bash
 is-useless <path/to/your/file>
 ```
+
+### Generating a Useless File
+
+To generate a new, perfectly useless file:
+```bash
+is-useless generate
+```
+This will create a new file in your current directory with a name like `useless-file-1678886400000.txt`.
+
+## Useless Sound Effect
+
+To truly enhance the uselessness experience, you can add a sound effect!
+Simply place an MP3 file named `useless-sound.mp3` in the root directory of this project.
+A sad trombone, a rubber chicken, or a deflating balloon sound is highly recommended.
 
 ## The Uselessness Algorithm™
 

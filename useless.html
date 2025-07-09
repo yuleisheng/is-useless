@@ -40,6 +40,22 @@
             transform: rotate(-15deg);
             margin-top: 30px;
         }
+        #score {
+            font-size: 48px;
+            font-weight: bold;
+            color: #d9534f;
+            margin: 20px 0;
+        }
+        #reasons {
+            text-align: left;
+            margin-top: 30px;
+        }
+        #reasons h3 {
+            text-align: center;
+        }
+        #reasons ul {
+            list-style-type: '✅ ';
+        }
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {
                 transform: translateY(0);
@@ -56,11 +72,35 @@
 <body>
     <div class="certificate">
         <h1>Certificate of Uselessness</h1>
-        <p>This document hereby certifies that the file you provided has been rigorously tested by our highly advanced, not-at-all-silly Uselessness Algorithm™ and has been found to be</p>
-        <p style="font-size: 36px; font-weight: bold; color: #d9534f;">ABSOLUTELY, UNEQUIVOCALLY, AND PROFOUNDLY USELESS.</p>
-        <p>It serves no purpose. It contributes nothing to society. It is a digital void, a testament to the beauty of doing nothing at all.</p>
-        <p>Congratulations on creating something so perfectly pointless.</p>
+        <p>This document hereby certifies that the file you provided has been rigorously tested and has achieved a</p>
+        <div id="score"></div>
+        <p>on the International Uselessness Scale.</p>
+        <div id="reasons">
+            <h3>Reasons for this prestigious award:</h3>
+            <ul id="reasons-list"></ul>
+        </div>
         <div class="stamp">OFFICIALLY USELESS</div>
     </div>
+
+    <audio id="useless-sound" src="useless-sound.mp3" preload="auto"></audio>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const score = params.get('score') || 0;
+        const reasons = JSON.parse(decodeURIComponent(params.get('reasons') || '[]'));
+
+        document.getElementById('score').textContent = `Uselessness Score: ${score}`;
+        const reasonsList = document.getElementById('reasons-list');
+        reasons.forEach(reason => {
+            const li = document.createElement('li');
+            li.textContent = reason;
+            reasonsList.appendChild(li);
+        });
+
+        window.onload = () => {
+            const sound = document.getElementById('useless-sound');
+            sound.play().catch(e => console.error("Could not play audio:", e));
+        };
+    </script>
 </body>
 </html>
