@@ -6,6 +6,10 @@
   "bin": {
     "is-useless": "dist/index.js"
   },
+  "files": [
+    "dist",
+    "useless.html"
+  ],
   "scripts": {
     "start": "ts-node src/index.ts",
     "build": "tsc",
@@ -22,5 +26,8 @@
     "@types/node": "^24.0.12",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "open": "^10.1.2"
   }
 }

@@ -2,6 +2,7 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import open from 'open';
 
 const filePath = process.argv[2];
 
@@ -11,6 +12,8 @@ if (!filePath) {
 }
 
 console.log(`Analyzing ${filePath} for uselessness...`);
+
+const uselessHtmlPath = path.join(__dirname, '..', 'useless.html');
 
 try {
     const fileName = path.basename(filePath);
@@ -23,6 +26,7 @@ try {
 
     if (hasAiInName || hasAiInContent) {
         console.log('🎉 Verdict: Certified Useless. Contains AI buzzwords, the ultimate sign of trying too hard. 🎉');
+        open(uselessHtmlPath);
         process.exit(0);
     }
 
@@ -66,10 +70,12 @@ try {
 
     // If all original checks pass...
     console.log('🎉 Congratulations! This file is certifiably useless! 🎉');
+    open(uselessHtmlPath);
 
 } catch (error) {
     if (error.code === 'ENOENT') {
         console.log(`Verdict: So useless it doesn't even exist. Well done.`);
+        open(uselessHtmlPath);
         process.exit(0);
     }
     console.log('An error occurred while trying to be useless:', error.message);
