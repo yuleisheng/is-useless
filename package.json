@@ -1,0 +1,26 @@
+{
+  "name": "is-useless",
+  "version": "1.0.0",
+  "description": "A CLI tool to determine if a file is sufficiently useless.",
+  "main": "dist/index.js",
+  "bin": {
+    "is-useless": "dist/index.js"
+  },
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "useless",
+    "fun",
+    "cli"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^24.0.12",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
